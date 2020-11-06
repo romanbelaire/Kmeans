@@ -1,21 +1,20 @@
 K Means Implementation in Python
 ================================
 
-File ID3.py contains my implementation of the ID3 decision tree
+File Kmeans.py contains my implementation of the K-means classification
 algorithm. To run the program, execute it as a python script followed by
-the .csv file path containing the dataset you'd like to create a tree
-for, and the number (k) of centroids, i.e. \$ python Kmeans.py data.csv
+the .csv file path containing the dataset you'd like to classify, and the number (k) of centroids, i.e. \$ python Kmeans.py data.csv
 3
 
 **Program limitations:**
 
 -   Requires Pandas version 0.23.4 or greater. Older versions may work,
-    > but this was the version I used when programming the algorithm.
+     but this was the version I used when programming the algorithm.
 
 -   The dataset should be in .csv format.
 
 -   The dataset can be in any dimension 1 or greater, but will only plot
-    > the outcomes for datasets of dimension 2xN (2D graph)
+     the outcomes for datasets of dimension 2xN (2D graph)
 
 K Means algorithm
 -----------------
@@ -26,28 +25,25 @@ selecting one random point and then the furthest point from the first
 one, then the furthest from those two, etc but completely random
 selection will suffice for this project.
 
-![](./img/media/image2.png){width="4.32437554680665in"
-height="3.276042213473316in"}
+![](./img/media/image2.png)
 
 After initial points were randomly selected, the individual data points
 are assigned according to the closest centroid. In the screenshot below,
 the centroids were also updated to be the center of their group as well.
 
-![](./img/media/image1.png){width="4.317708880139983in"
-height="3.388438320209974in"}
+![](./img/media/image1.png)
 
 The groupings are considered converged when they no longer change from
 one iteration to another. One example of final groupings are as such:
 
-![](./img/media/image3.png){width="4.109375546806649in"
-height="3.2104494750656167in"}
+![](./img/media/image3.png)
 
 *Note: The above screenshots are all from different runs of the program.
 Colors are not consistent between runs.*
 
 Through one iteration of the algorithm, the following centroids were
 calculated:
-
+~~~
 +----------------------------------------------+
 | \[\[0.6025806834195966, 5.125601007188029\], |
 |                                              |
@@ -91,5 +87,5 @@ calculated:
 |                                              |
 | \[6.033667356017605, 3.0005251118352554\]\]  |
 +----------------------------------------------+
-
+~~~
 This algorithm converged in 7 iterations.
